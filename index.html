@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Anitha Bennett</title>
+<meta name="description" content="Anitha Bennett is an author, speaker and coach based in Chennai. Book her for teacher talks, coaching, workshops and ghostwriting.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500&display=swap">
+<style>
+/* Layout: one left-aligned column with whitespace as the divider; small grey labels beside content on wide screens; photo beside the intro. */
+:root {
+  --bg: #FAFAF9;
+  --ink: #1A1A1A;
+  --muted: #74746F;
+  --line: #E4E4E0;
+  --font: "Hanken Grotesk", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) { --bg: #141413; --ink: #EDEDEA; --muted: #8E8E88; --line: #2A2A28; color-scheme: dark; }
+}
+:root[data-theme="dark"] { --bg: #141413; --ink: #EDEDEA; --muted: #8E8E88; --line: #2A2A28; color-scheme: dark; }
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body {
+  margin: 0;
+  background: var(--bg); color: var(--ink);
+  font-family: var(--font); font-weight: 400; font-size: 1.0625rem; line-height: 1.7;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+.wrap { max-width: 56rem; margin: 0 auto; padding-block: clamp(2.5rem, 8vw, 6rem) 4rem; }
+h1, h2, h3, p, ul { margin: 0; }
+ul { padding: 0; list-style: none; }
+a { color: inherit; text-underline-offset: 3px; text-decoration-thickness: 1px; }
+:focus-visible { outline: 1px solid var(--ink); outline-offset: 4px; }
+
+header { display: grid; grid-template-columns: minmax(0, 1fr) 16rem; gap: clamp(2rem, 6vw, 4rem); align-items: end; }
+.intro { display: flex; flex-direction: column; gap: 1.25rem; }
+h1 { font-weight: 300; font-size: clamp(2.5rem, 7vw, 4.25rem); line-height: 1.05; letter-spacing: -0.02em; }
+.roles { font-size: clamp(1.15rem, 2.4vw, 1.4rem); }
+.lede { color: var(--muted); max-width: 30em; }
+.cta { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: .5rem; }
+.btn { display: inline-block; padding: .7rem 1.3rem; border: 1px solid var(--ink); text-decoration: none; font-size: .95rem; font-weight: 500; }
+.btn.solid { background: var(--ink); color: var(--bg); }
+.btn:hover { opacity: .8; }
+.photo { width: 100%; max-width: 100%; height: auto; aspect-ratio: 3 / 4; object-fit: cover; object-position: 50% 35%; display: block; filter: saturate(.9); }
+
+section {
+  display: grid; grid-template-columns: 10rem minmax(0, 1fr); gap: 1rem 2rem;
+  margin-top: clamp(3.5rem, 8vw, 5.5rem);
+}
+h2 { font-size: .8rem; font-weight: 500; text-transform: uppercase; letter-spacing: .12em; color: var(--muted); padding-top: .3rem; }
+section > div { min-width: 0; }
+.prose { max-width: 34em; }
+.prose p + p { margin-top: 1rem; }
+
+.offers { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2rem; }
+.offers h3 { font-weight: 400; font-size: 1.35rem; margin-bottom: .5rem; }
+.offers p { color: var(--muted); font-size: .97rem; }
+.offers a { display: inline-block; margin-top: .75rem; font-size: .95rem; font-weight: 500; }
+
+.talks-intro { color: var(--muted); margin-bottom: 1rem; max-width: 34em; }
+.list li { padding-block: .8rem; border-top: 1px solid var(--line); }
+.list li:last-child { border-bottom: 1px solid var(--line); }
+.talks li { font-size: clamp(1.1rem, 2.2vw, 1.3rem); font-weight: 300; }
+.list .sub { display: block; color: var(--muted); font-size: .95rem; font-weight: 400; }
+
+.numbers { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 1.75rem 1.5rem; }
+.numbers b { display: block; font-weight: 300; font-size: 2rem; line-height: 1; font-variant-numeric: tabular-nums; }
+.numbers span { display: block; color: var(--muted); font-size: .9rem; margin-top: .4rem; }
+
+.contact li { display: flex; flex-wrap: wrap; align-items: baseline; gap: .25rem 1rem; padding-block: .8rem; border-top: 1px solid var(--line); }
+.contact li:last-child { border-bottom: 1px solid var(--line); }
+.contact .k { color: var(--muted); font-size: .9rem; width: 7.5rem; }
+.contact .v { overflow-wrap: anywhere; flex: 1 1 12rem; }
+.copy { background: none; border: 0; padding: 0; font: inherit; font-size: .85rem; color: var(--muted); cursor: pointer; text-decoration: underline; text-underline-offset: 3px; }
+.copy:hover { color: var(--ink); }
+.hint { color: var(--muted); font-size: .95rem; margin-bottom: 1rem; max-width: 34em; }
+
+footer { margin-top: clamp(4rem, 10vw, 6rem); color: var(--muted); font-size: .85rem; }
+
+@media (max-width: 760px) {
+  header { grid-template-columns: minmax(0, 1fr); }
+  .photo { max-width: 11rem; order: -1; }
+  section { grid-template-columns: minmax(0, 1fr); gap: .75rem; }
+  .offers { grid-template-columns: minmax(0, 1fr); gap: 1.75rem; }
+  .numbers { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+@media (max-width: 420px) {
+  .numbers { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+</style>
+<meta property="og:title" content="Anitha Bennett">
+<meta property="og:description" content="Author, speaker and coach. Book Anitha for teacher talks, coaching and writing.">
+<meta property="og:image" content="images/anitha.jpg">
+</head>
+<body>
+
+<div class="wrap">
+  <header>
+    <div class="intro">
+      <h1>Anitha Bennett</h1>
+      <p class="roles">Author · Speaker · Coach</p>
+      <p class="lede">Author of more than 60 books for Scholastic, speaker to school teachers, and ICF certified coach. Based in Chennai, working in person and online.</p>
+      <div class="cta">
+        <a class="btn solid" href="#book">Book Anitha</a>
+        <a class="btn" href="#talks">Talks for teachers</a>
+      </div>
+    </div>
+    <img class="photo" src="images/anitha.jpg" alt="Anitha Bennett standing in a leafy garden courtyard, smiling" width="720" height="960">
+  </header>
+
+  <section>
+    <h2>Book her as</h2>
+    <div class="offers">
+      <div>
+        <h3>Speaker</h3>
+        <p>Talks and workshops for school teachers, staff development days and conferences. 500+ workshops delivered.</p>
+        <a href="#book">Book a talk</a>
+      </div>
+      <div>
+        <h3>Coach</h3>
+        <p>One-to-one coaching as an ICF certified coach and NLP practitioner, combining neuroscience with holistic methods.</p>
+        <a href="#book">Book coaching</a>
+      </div>
+      <div>
+        <h3>Author</h3>
+        <p>Books, articles and ghostwriting on family, parenting, learning and life skills. 60+ books for Scholastic.</p>
+        <a href="#book">Commission writing</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="talks">
+    <h2>Talks for teachers</h2>
+    <div>
+      <p class="talks-intro">Sessions for school teachers, offered as keynotes or hands-on workshops.</p>
+      <ul class="list talks">
+        <li>The Creative Classroom</li>
+        <li>Emotional Intelligence as a Teacher</li>
+        <li>Handling 21st-Century Kids</li>
+        <li>Stress Management for Teachers</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Writing</h2>
+    <div>
+      <ul class="list">
+        <li>Books<span class="sub">More than 60 books written for Scholastic</span></li>
+        <li>Ghostwriting<span class="sub">Books and articles written in your voice, under your name</span></li>
+        <li>Articles<span class="sub">1,000+ articles on family, relationships, parenting, learning and life skills</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>About</h2>
+    <div class="prose">
+      <p>Anitha has spent more than twenty years writing and fifteen years speaking. Her work centres on the people who shape children's lives: teachers and parents.</p>
+      <p>She is an ICF certified coach, a certified NLP trainer and master practitioner, and a certified happiness coach, with further training in Emotional Freedom Techniques, Brain Gym and positive psychology. She also teaches NLP practitioner programs online.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>In numbers</h2>
+    <div class="numbers">
+      <div><b>60+</b><span>books for Scholastic</span></div>
+      <div><b>1,000+</b><span>articles</span></div>
+      <div><b>500+</b><span>workshops</span></div>
+      <div><b>20+</b><span>years writing</span></div>
+      <div><b>15+</b><span>years speaking</span></div>
+    </div>
+  </section>
+
+  <section id="book">
+    <h2>Book Anitha</h2>
+    <div>
+      <p class="hint">Send a short note with what you need (a talk, coaching or writing), the date or timeline, and your audience or project.</p>
+      <ul class="contact">
+        <li><span class="k">Email</span><a class="v" id="email" href="mailto:mailanitha@yahoo.com?subject=Booking%20enquiry">mailanitha@yahoo.com</a><button class="copy" type="button" data-copy="email">Copy</button></li>
+        <li><span class="k">WhatsApp</span><a class="v" id="phone" href="https://wa.me/919444855911" target="_blank" rel="noopener">+91 94448 55911</a><button class="copy" type="button" data-copy="phone">Copy</button></li>
+        <li><span class="k">Location</span><span class="v">Chennai, India · available online</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <footer>© Anitha Bennett</footer>
+</div>
+
+<script>
+document.querySelectorAll('[data-copy]').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const el = document.getElementById(btn.dataset.copy);
+    const reset = (t, ms) => { btn.textContent = t; setTimeout(() => btn.textContent = 'Copy', ms); };
+    const fallback = () => { const r = document.createRange(); r.selectNodeContents(el); const s = getSelection(); s.removeAllRanges(); s.addRange(r); reset('Selected', 2000); };
+    try { navigator.clipboard.writeText(el.textContent.trim()).then(() => reset('Copied', 1500), fallback); } catch (e) { fallback(); }
+  });
+});
+</script>
+</body>
+</html>
